@@ -1,0 +1,282 @@
+/* Global styles */
+:root {
+    box-sizing: border-box;
+    background-color: #f8f8f6;
+  }
+  
+  * {
+    box-sizing: inherit;
+  }
+  
+  body {
+    display: flex;
+    font-family: 'Trebuchet MS', sans-serif;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+  
+  h1 {
+    font-size: x-large;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: large;
+    font-weight: normal;
+  }
+  
+  h3 {
+    font-size: medium;
+    font-weight: 600;
+  }
+  
+  input {
+    /* Inputs often have a minimum width, which can interfere with using flexbox to size them */
+    min-width: 0;
+  }
+  
+  input, button, select, input[type=file]::file-selector-button  {
+    /* Inputs and buttons often use a smaller font. Use a normal font size by default. */
+    font-size: medium;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+  
+  /* Unfortunately, we can't simply define this rule on .template, because a later selector may
+     override it, so we use two class selectors to be more specific. */
+  .template, .hidden, .template.column, .template.card {
+    display: none;
+  }
+
+  
+  #columnForm {
+    display: flex;
+    align-items: center;
+  }
+  
+  #columnTitle {
+    flex-grow: 1;
+    margin-right: 0.25rem;
+  }
+  
+  #cardForm input, #cardForm textarea {
+    margin-bottom: 0.5rem;
+  }
+  
+  #cardDescription {
+    font-family: inherit;
+    height: 6em;
+  }
+  
+  /* Board area */
+  #board {
+    flex-grow: 1;
+    /* Make the board scroll if it needs to. This keeps the sidebar in place when a column gets too
+       long. Without it, the board would overflow its container and make the entire page scroll. */
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0px;
+    border-right: 1px solid lightgray;
+    padding: 0.75rem;
+  }
+
+  .columnTitle {
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    margin: 1rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  h2.columnTitle{
+      color: #6b9b8a;
+  }
+  
+  .card {
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 0.75rem;
+    position: relative;
+    background-color: #E5E8E8;
+  }
+
+  .card .description {
+    margin: 0;
+  }
+
+  .card .buttons {
+    position: absolute;
+    top: 0.5rem; right: 0.5rem;
+    display: none;
+  }
+
+  .cardForm {
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .cardForm, .cardForm div {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    background-color: #ffffff;
+  }
+
+  .card:hover > .buttons {
+    display: flex;
+  }
+  
+  /* Unset browser's default button styles for these buttons. */
+  .card .buttons button, .moveHere {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .card .buttons button:hover {
+    /* rgba defines a translucent color, allowing the card's background color to show through. */
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .cardForm .formTitle {
+      margin-top: 0px;
+      color: #6b9b8a;
+  }
+
+  .cardForm ,.cardForm textarea, .cardForm input, .cardForm button, 
+  .cardForm input[type=file]::file-selector-button, .cardForm select, 
+  .preference select, .preference button{
+    color: #515C5D;
+  }
+
+  .minmax img, .edit img, .delete img{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cardForm input , .cardForm textarea, .cardForm select {
+      margin-bottom: 10px;
+  }
+
+  .cardForm .minmax img{
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      
+  }
+
+  .cardForm .minmax{
+    width: 30px;
+    position: absolute;
+    top: 0.5rem; right: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-color: transparent;
+  } 
+  
+  .debuggingPref {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .editor {
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    font-weight: 400;
+    height: 75px;
+    letter-spacing: normal;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-top: 5px;
+    padding: 10px;
+    tab-size: 4;
+  }
+
+  .gradingCard, .debuggingCard{
+    padding-top: 25px;
+    padding-bottom: 24px;
+  }
+
+  .labelArea{
+    position: absolute;
+    bottom: 0.5rem; right: 0.5rem;
+  }
+
+  .copy img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .copy {
+    background-color: transparent;
+    border: transparent;
+  }
+
+  .assignmentNum, .courseLabel {
+    border-radius: 1rem;
+  }
+
+  .photo {
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .preference {
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 0.75rem;
+    width: 40%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    background-color: #ffffff;
+    color:#515C5D
+  }
+
+  .preference select {
+    margin-top: 10px;
+  }
+
+  .preference button {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .selected {
+    border: 2px solid black;
+  }
+  
+  .moveHere {
+    color: gray;
+    font-size: small;
+  }
+  
+  .moveHere:hover {
+    background-color: #e0e0e0;
+    /* Use the default text color from the page. */
+    color: inherit;
+  }
+  

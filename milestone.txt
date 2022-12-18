@@ -1,0 +1,59 @@
+CS193X Final Project Milestone
+=============================
+
+Project Name: SL Helper
+Your Name: Isabel Sieh
+Your SUNetID: isabelrs
+
+Overview
+--------
+I've finished making a comprehensive wireframe of the website including how to  arrange all the elements and what style/aesthetic I'll use (plan is in the project folder as design.pdf).
+
+I also figured out what JS tools, APIs, MongoDB and libraries to use for more complicated tasks like uploading a viewing a photo and using a whiteboard. I also looked into the feasibility of having accounts using Google Sign-In and sharing things using a sharable link.
+
+In terms of meeting the milestone deadlines I set, I am a bit behind. I setup my project folder but have not done much coding - I started the HTML/CSS and set up files for the backend. I've mainly spent my time planning so that when I do need to code up my project, I know exactly what to do.
+ 
+
+Project Changes
+---------------
+I've looked into the "extra features" (google sign-in, shareable link) and how I would incorporate them if I end up having the time. I also added a new feature to the LAIR helper, which is that they can add code and have it displayed as actual code (with colors!)
+
+Follow-up
+---------
+Are there any resources/tools I can use to make my website ~look~ better? (More professional, less like someone just made just code up a few things and called it a day)
+
+API
+---
+I am in the midst of writing up an index.js to define all the API endpoints but below is a list of the endpoints I've planned for:
+
+(note: isabelrs is an example username)
+
+* "isabelrs/teach" -> json of a single item, cards which is an array of card json objects. Each card contains detail on time (date and week), photo (array of photos), links (array of links), and side notes (just a single string). This is to display the cards for the teaching helper portion.
+
+* isabelrs/grade" -> json of a single item, comments which is an array of comment json objects. Each comment has the comment (string) and the assignment number. This is to display the comments for the Assignment grading helper.
+
+* "isabelrs/grade/1" -> json of a single item, comments which is an array of strings for comments. This is to display the comments of a specific assignment #
+
+* isabelrs/lair" -> json of a single item, cards which is an array of card json objects. Each card contains detail on the course (106a or 106b), assignment, code (text and programming language), notes (just a single string), and photo.
+
+* "isabelrs/lair/106a" -> same as the above one but only for that course.
+
+I have also yet to add things like "post", "patch", "delete" to change content.
+
+External libraries and code
+---------------------------
+I'm planning on using/referencing:
+* code from our previous assignments
+* a whiteboard external library (https://github.com/caboodle-tech/whiteboard)
+* viewerjs (https://github.com/fengyuanchen/viewerjs) to view images
+* PrismJS (https://prismjs.com/) to display code (for lair cards)
+
+I am deciding between only displaying the title of a link versus the thumbnail - either way I will use this tutorial (https://javascript.plainenglish.io/make-a-link-preview-ultimate-step-by-step-guide-5f0ac827cc89).
+
+Collaboration and resources
+---------------------------
+For design reference, I plan to consult Notion; playing around with Notion helps me visualize what I want my website to look and act like. Also - whenever I have questions that aren't answered on Ed, I check stack overflow.
+
+Anything else?
+-------------
+Overall, I'm a bit behind on everything due to personal family things, but I'm catching up.

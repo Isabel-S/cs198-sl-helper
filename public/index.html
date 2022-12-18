@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>SL Helper</title>
+
+    <!-- These two lines provide automatic page and style reloading when files change -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/lib/client/updater.js" defer></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main id="board">
+
+      <!-- Teaching Helper -->
+      <section class="column">
+        <h2 class="columnTitle">Teaching</h2>
+
+        <form class="cardForm" id="teachForm">
+          <h4 class = "formTitle"> Add Teaching Note </h4>
+          <button class="minmax" type="button"><img src="icons/minmax.svg" alt="Minimize/Maximize"></button>
+          <div class="formContent">
+            <label for="cardWeek">Week #:</label>
+            <input type="text" name="week" id="cardWeek" required>
+            <label for="cardNotes">Notes:</label>
+            <textarea name="note" id="cardNotes"></textarea>
+            <label for="img">Photo:</label>
+            <input type="file" id="img" name="img" accept="image/*">
+            <label for="cardLinks">Links (seperated by comma, no space!):</label>
+            <textarea name="links" id="cardLinks"></textarea>
+            <button type="submit" id="addTeaching">Add</button>
+          </div>
+        </form>
+
+        <div id = "teach">
+        </div>
+      </section>
+
+      <!-- Grading Helper -->
+      <section class="column">
+        <h2 class="columnTitle">Grading</h2>
+
+        <div class = "preference">
+          <label for="assignmentView">View:</label>
+          <select name="assignmentView" id = "assignmentView">
+            <option value="">All assignments</option>
+          </select>
+        </div>
+
+        <form class="cardForm" id="gradeForm">
+          <h4 class = "formTitle"> Add Comment </h4>
+          <button class="minmax" type="button"><img src="icons/minmax.svg" alt="Minimize/Maximize"></button>
+          <div class = "formContent">
+            <label for="cardAssignment">Assignment #:</label>
+            <input type="text" name="assignment" id="cardAssignment" required>
+            <label for="cardComment">Comment:</label>
+            <textarea name="comment" id="cardComment" required></textarea>
+            <button type="submit" id="addComment">Add</button>
+          </div>
+        </form>
+
+        <div id = "grade">
+        </div>
+      </section>
+
+      <!-- LAIR (debugging) helper -->
+      <!-- <section class="column">
+        <h2 class="columnTitle">Debugging</h2>
+
+        <div class = "debuggingPref">
+          <div class = "preference">
+            <label for="assignmentView">Course:</label>
+            <select name="courseView" id = "courseView">
+              <option value="">Both courses</option>
+              <option value="A">CS106A</option>
+              <option value="B">CS106B</option>
+            </select>
+          </div>
+          <div class = "preference">
+            <button>Whiteboard!</button>
+          </div>
+        </div>
+
+        <form class="cardForm">
+          <h4 class = "formTitle"> Add LAIR Note </h4>
+          <button class="minmax" type="button"><img src="icons/minmax.svg" alt="Minimize/Maximize"></button>
+          <div class = "formContent">
+            <select name="course" id = "cardCourse">
+              <option value="">Select a course</option>
+              <option value="A">CS106A</option>
+              <option value="B">CS106B</option>
+            </select>
+            <label for="cardWeek">Assignment #:</label>
+            <input type="text" name="week" id="cardWeek" required>
+            <label for="cardNotes">Notes:</label>
+            <textarea name="notes" id="cardNotes"></textarea>
+            <label for="cardCode">Code:</label>
+            <textarea name="code" id="cardCode"></textarea>
+            <label for="img">Photo:</label>
+            <input type="file" id="img" name="img">
+            <button type="submit" id="addDebugging">Add</button>
+          </div>
+        </form>
+
+        vvvv EXAMPLE CARDS vvvv
+        <article class="debuggingCard card">
+          <div class="editor"></div>
+          <img src="images/diagram1.png" alt="alt template photo" class="photo">
+          <div class="buttons">
+            <button class="edit"><img src="icons/edit.svg" alt="Edit"></button>
+            <button class="delete"><img src="icons/delete.svg" alt="Delete"></button>
+          </div>
+          <div class="labelArea">
+            <button class="courseLabel">CS106B</button>
+            <button class="assignmentNum">Assignment 5</button>
+          </div>
+        </article>
+
+        <article class="debuggingCard card">
+          <p class="notes">contains: if the distance of the elem we're looking 
+            at was less than our distance, then its hashfunc value is greater and so we passed
+            what would've been ours.</p>
+          <div class="buttons">
+            <button class="edit"><img src="icons/edit.svg" alt="Edit"></button>
+            <button class="delete"><img src="icons/delete.svg" alt="Delete"></button>
+          </div>
+          <div class="labelArea">
+            <button class="courseLabel">CS106B</button>
+            <button class="assignmentNum">Assignment 7</button>
+          </div>
+        </article>
+      </section>
+    </main> -->
+
+    <!-- Template cards to be cloned in JavaScript -->
+    <article class="template teachingCard card" id="templateTeach">
+      <h3 class="weekTitle">[WEEK #]</h3>
+      <p class="notes"></p>
+      <img src="" alt="" class="photo">
+      <ul class="links">
+      </ul>
+      <div class="buttons">
+        <!-- <button class="edit"><img src="icons/edit.svg" alt="Edit"></button> -->
+        <button class="delete"><img src="icons/delete.svg" alt="Delete"></button>
+      </div>
+    </article>
+
+    <article class="template gradingCard card" id="templateGrade">
+      <p class="comment"></p>
+      <div class="buttons">
+        <!-- <button class="edit"><img src="icons/edit.svg" alt="Edit"></button> -->
+        <button class="delete"><img src="icons/delete.svg" alt="Delete"></button>
+      </div>
+      <div class="labelArea">
+        <button class="copy"><img src="icons/copy.svg" alt="Copy"></button>
+        <button class="assignmentNum"></button>
+      </div>
+    </article>
+
+     <!-- LAIR (debugging) card template -->
+    <article class="template debuggingCard card">
+      <p class="notes">This is a template note.</p>
+      <div class="editor"></div>
+      <img src="" alt="alt template photo" class="photo">
+      <div class="buttons">
+        <!-- <button class="edit"><img src="icons/edit.svg" alt="Edit"></button> -->
+        <button class="delete"><img src="icons/delete.svg" alt="Delete"></button>
+      </div>
+      <div class="labelArea">
+        <button class="courseLabel">Course</button>
+        <button class="assignmentNum">Assignment #</button>
+      </div>
+    </article>
+  </body>
+</html>
