@@ -1,13 +1,11 @@
-CS193X Final Project
+CS193X Final Project: SL Helper 
 ====================
-
-Project Name: SL Helper 
-Your Name: Isabel Sieh
-Your SUNetID: isabelrs
 
 Overview
 --------
 The SL Helper has a few tools that could help with CS106 section leading to keep everything organized in one place. The site is broken down into 3 parts: a teaching helper, an assignment grading helper, and a LAIR helper.
+
+It is hosted here: https://cs198-sl-helper.herokuapp.com/
 
 
 Running
@@ -31,10 +29,7 @@ Grading helper:
 Special notes:
 * all forms can be minimized with the small black bar! 
 
-Collaboration and libraries
----------------------------
-* I referenced assign 2 for HTML/CSS and assign 4 for the JS
-Anything else?
+Misc notes:
 -------------
 I was planning on having an edit option (I was going to turn the text into text areas, transfer the information, and then use PATCH) but I ran out of time. I commented out the edit button on the HTML.
 
@@ -44,5 +39,3 @@ I also planned on having a LAIR (debugger) helper consisting of:
 * button that displays a whiteboard
 
 I had made the HTML/CSS of the LAIR helper, including a working code text editor that used CodeJar, but didn't have enough time to fully implement the JS so I took it out. I left the HTML/CSS and JS for the code text editor in my project if you guys want to see it, but I just commented it out.
-
-Thank you guys for this course!! I learned a lot :D
