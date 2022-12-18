@@ -1,5 +1,6 @@
 CS193X Final Project: SL Helper 
 ====================
+NOTE: As of Dec 18, I am currently working on deploying this correctly - this project is from close to a year ago 
 
 Overview
 --------
