@@ -6,6 +6,8 @@ Overview
 --------
 The SL Helper has a few tools that could help with CS106 section leading to keep everything organized in one place. The site is broken down into 3 parts: a teaching helper, an assignment grading helper, and a LAIR helper.
 
+It is made entirely from scratch, with the frontend written in HTML and CSS and Javascript, and the backend written in Javascript, specifically Node and Express, and uses a MongoDB database.
+
 It is hosted here: https://cs198-sl-helper.herokuapp.com/
 
 
