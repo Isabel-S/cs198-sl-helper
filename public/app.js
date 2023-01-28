@@ -1,3 +1,15 @@
+/* App class
+* 
+* Methods and variables to manage the state of the page.
+* 
+* - Instance variables: assigned to document elements in order to assign 
+*   event handlers, track state and respond to user interactions
+* - Event handlers: actions like adding/deleting a card, copying text
+* - setup(): finds and assigns document elemtens to instance variables
+*   and event handlers
+* - load..(): called whenever a change is made to auto-refresh cards
+*/
+
 import {CodeJar} from 'https://medv.io/codejar/codejar.js'
 import { Teach, TeachCard, Grade, GradeCard } from "./Cards.js";
 
@@ -11,7 +23,7 @@ class App {
     this._grade = null;
     this.gradeForm = null;
 
-    // event handlers that you need  to bind (call on API)
+    /* Event handlers that you need to bind (call on API) */
     this._onAddTeach = this._onAddTeach.bind(this);
     this._onAddGrade = this._onAddGrade.bind(this);
     this._onDeleteCard = this._onDeleteCard.bind(this);

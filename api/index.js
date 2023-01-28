@@ -1,13 +1,20 @@
+/* API Index
+ *
+ * Connects to the MongoDB Database and handles API routes to return 
+ * JSON data (usually manipulated from MongoDB data).
+*/
+
 import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
-import { request } from "express";
 import { MongoClient, ObjectId } from "mongodb";
 
 let DATABASE_NAME = "cs193x_project";
 const MONGODB_URL = process.env.MONGODB_URL || "mongodb://127.0.0.1:27017";
 
+/* Use Express middleware */
 const api = express.Router();
+
 let conn = null;
 let db = null;
 let Teach = null;
@@ -17,21 +24,29 @@ const initApi = async app => {
   app.set("json spaces", 2);
   app.use("/api", api);
 
-  // //Initialize database connection
+  /* Initialize database connection */
   conn = await MongoClient.connect(MONGODB_URL)
   db = conn.db(DATABASE_NAME);
+
+  /* Get database collections for Teach and Grade cards */
   Teach = db.collection("teach");
   Grade = db.collection("grade");
 };
 
+/* Set data limit to 500mb (for file uploads) */
 api.use(bodyParser.json({ limit: "500mb" }));
+
+/* CORS: Allow for secure cross-origin requests and data  
+ * transfers between browsers and servers 
+*/
 api.use(cors());
 
+/* Test endpoint: "/" should return "Hello, world!"" */
 api.get("/", (req, res) => {
   res.json({ message: "Hello, world!" });
 });
 
-/* Endpoints */
+/* ENDPOINTS */
 
 /* TEACH ENDPOINTS */
 /* Adds teach card */
@@ -121,7 +136,7 @@ api.delete("/grade/:id", async (req, res) => {
   return;
 });
 
-/* Return an array of assignment numbers*/
+/* Return an array of assignment numbers */
 api.get("/grade/assignments", async (req, res) => {
   let gradeAll = await Grade.find().toArray();
 
@@ -135,7 +150,7 @@ api.get("/grade/assignments", async (req, res) => {
   res.json({ assignments });
 });
 
-/* Return an array of grade cards with that assignment number*/
+/* Return an array of grade cards with that assignment number */
 api.get("/grade/:num", async (req, res) => {
   let num = req.params.num;
   let gradeCards = await Grade.find({assign: num}).toArray();

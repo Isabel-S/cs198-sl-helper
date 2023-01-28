@@ -1,3 +1,10 @@
+/* Server
+ * Code sourced from Stanford CS193X 
+ *
+ * Computer program to send files (in public folder) to client,
+ * and set up API. 
+*/
+
 import express from "express";
 import http from "http";
 import path from "path";

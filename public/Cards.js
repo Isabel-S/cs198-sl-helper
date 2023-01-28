@@ -1,3 +1,10 @@
+/* Card Classes
+* 
+* Classes to represents teach and grade cards, and functions
+* to handle the group of these cards. The functions decide what
+* parameters to input when calling an apiRequest to retreive
+* the right data. 
+*/ 
 import apiRequest from "./api.js";
 
 /* A small class to represent a TeachCard */
@@ -12,6 +19,10 @@ export class TeachCard {
   }
 }
 
+/* Teach class
+ * Holds methods to get, add, and delete teach cards.
+ * 
+*/
 export class Teach {
   async getCards() {
     let data = await apiRequest("GET", "/teach/cards");
@@ -39,6 +50,12 @@ export class GradeCard {
   }
 }
 
+/* Grade class
+ * Holds methods to get, add, and delete grade cards, and to
+ * get assignment numbers for other front end functions to filter
+ * the cards.
+ * 
+*/
 export class Grade {
   async getCards() {
     let data = await apiRequest("GET", "/grade/cards");
