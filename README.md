@@ -1,6 +1,6 @@
 CS193X Final Project: SL Helper 
 ====================
-NOTE: As of Dec 18, I am currently working on deploying this correctly - this project is from close to a year ago 
+NOTE: As of Jan 2023, I am currently working on deploying this correctly (this project is from close to a year ago!) It is deployed, but has issues with api fetches. 
 
 Overview
 --------
@@ -8,14 +8,14 @@ The SL Helper has a few tools that could help with CS106 section leading to keep
 
 It is made entirely from scratch, with the frontend written in HTML and CSS and Javascript, and the backend written in Javascript, specifically Node and Express, and uses a MongoDB database.
 
-It is hosted here: https://cs198-sl-helper.herokuapp.com/
+Locally, the project looks like this: (images tbd)
+
+It is semi-hosted here: https://cs198-slhelper.herokuapp.com/. Most functionality - adding cards, uploading images, loading past cards - is halted with api fetch errors. I hope to fix this in the coming months when I have the free time!
 
 
-Running
+Running (localy for now)
 -------
 There is a 500mb limit so please don't try to upload images too large of a size. I also have some pre mongodb stuff that should be there.
-
-I also have two collections but didn't how to put that in one js file so I have output.js for teach and output2.js for grade.s
 
 Features
 --------
