@@ -8,7 +8,8 @@ The SL Helper has a few tools that could help with CS106 section leading to keep
 
 It is made entirely from scratch, with the frontend written in HTML and CSS and Javascript, and the backend written in Javascript, specifically Node and Express, and uses a MongoDB database.
 
-Locally, the project looks like this: (images tbd)
+Locally, the project looks like this:
+![fullview screenshot of slhelper, with a teach and grade column, each with forms and example cards filled out](fullview.png "Example of SL Helper in action!")
 
 It is semi-hosted here: https://cs198-slhelper.herokuapp.com/. Most functionality - adding cards, uploading images, loading past cards - is halted with api fetch errors. I hope to fix this in the coming months when I have the free time!
 
