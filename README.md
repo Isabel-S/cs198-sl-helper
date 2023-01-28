@@ -14,8 +14,11 @@ Locally, the project looks like this:
 It is semi-hosted here: https://cs198-slhelper.herokuapp.com/. Most functionality - adding cards, uploading images, loading past cards - is halted with api fetch errors. I hope to fix this in the coming months when I have the free time!
 
 
-Running (localy for now)
+Running (locally for now)
 -------
+* download the "offline" branch
+* follow steps to set up mongod: https://web.stanford.edu/class/cs193x/mongodb.html
+* run 'npm install' and 'npm start'
 There is a 500mb limit so please don't try to upload images too large of a size. I also have some pre mongodb stuff that should be there.
 
 Features
