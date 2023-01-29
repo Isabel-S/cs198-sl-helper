@@ -10,7 +10,7 @@ import express from "express";
 import { MongoClient, ObjectId } from "mongodb";
 
 let DATABASE_NAME = "cs193x_project";
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb://127.0.0.1:27017";
+const MONGODB_URL = "mongodb://127.0.0.1";
 
 /* Use Express middleware */
 const api = express.Router();
