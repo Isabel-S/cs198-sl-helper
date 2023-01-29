@@ -20,7 +20,7 @@ Running (locally for now)
 * follow steps to set up mongod: https://web.stanford.edu/class/cs193x/mongodb.html, including the MongoDB directory
 * run 'npm install' and 'npm start'
 * optional: to preload sample data, follow these extra steps (https://docs.google.com/document/d/1Witc84ObQprENAymo5mXoyjfHXOEn5CDOB8uSSHKkaI/edit)
-There is a ~300mb limit so please don't try to upload images too large of a size. I also have some pre mongodb stuff that should be there.
+* There is a ~300mb limit so please don't try to upload images too large of a size. I also have some pre mongodb stuff that should be there.
 
 Features
 --------
