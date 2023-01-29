@@ -17,10 +17,10 @@ It is semi-hosted here: https://cs198-slhelper.herokuapp.com/. Most functionalit
 Running (locally for now)
 -------
 * download the "offline" branch
-* follow steps to set up mongod: https://web.stanford.edu/class/cs193x/mongodb.html
+* follow steps to set up mongod: https://web.stanford.edu/class/cs193x/mongodb.html, including the MongoDB directory
 * run 'npm install' and 'npm start'
-* optional: there are two data files (output.js, output2.js) that you can pre-load using these instructions (https://docs.google.com/document/d/1Witc84ObQprENAymo5mXoyjfHXOEn5CDOB8uSSHKkaI/edit)
-There is a ~300mb limit so please don't try to upload images too large of a size. I also have some pre mongodb stuff that should be there.
+* optional: to preload sample data, follow these extra steps (https://docs.google.com/document/d/1Witc84ObQprENAymo5mXoyjfHXOEn5CDOB8uSSHKkaI/edit)
+* There is a ~300mb limit so please don't try to upload images too large of a size. I also have some pre mongodb stuff that should be there.
 
 Features
 --------
